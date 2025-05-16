@@ -22,7 +22,15 @@ const queries = {
     );
   `,
 
-    insertQuestions: `
+  createLeaderboardTable: `
+    CREATE TABLE IF NOT EXISTS leadboard (
+      id SERIAL PRIMARY KEY,
+      user_name TEXT NOT NULL,
+      score INTEGER NOT NULL
+    );
+  `,
+
+  insertQuestions: `
     INSERT INTO questions (id, category_id, question)
     VALUES
       (1, 1, 'What does CPU stand for?'),
@@ -47,90 +55,90 @@ const queries = {
       
   `,
 
-insertAnswers: `
-  INSERT INTO answers (question_id, answer, is_correct)
-  VALUES
-  
-    (1, 'Central Processing Unit', true),
-    (1, 'Central Progress Unit', false),
-    (1, 'Center Park Unit', false),
-    (1, 'Cd Papper Unit', false),
+  insertAnswers: `
+    INSERT INTO answers (question_id, answer, is_correct)
+    VALUES
+    
+      (1, 'Central Processing Unit', true),
+      (1, 'Central Progress Unit', false),
+      (1, 'Center Park Unit', false),
+      (1, 'Cd Papper Unit', false),
 
-    (2, 'Power Supply Unit', true),
-    (2, 'Power Super Unit', false),
-    (2, 'Power Small User', false),
-    (2, 'Power Supply Users', false),
+      (2, 'Power Supply Unit', true),
+      (2, 'Power Super Unit', false),
+      (2, 'Power Small User', false),
+      (2, 'Power Supply Users', false),
 
-    (3, 'Graphics Processing Unit', true),
-    (3, 'Gaming Program Utility', false),
-    (3, 'Graphical Power Unit', false),
-    (3, 'Graphic Performance Unit', false),
+      (3, 'Graphics Processing Unit', true),
+      (3, 'Gaming Program Utility', false),
+      (3, 'Graphical Power Unit', false),
+      (3, 'Graphic Performance Unit', false),
 
-    (4, 'Random Access Memory', true),
-    (4, 'Read Access Memory', false),
-    (4, 'Run Active Memory', false),
-    (4, 'Range Allocation Module', false),
+      (4, 'Random Access Memory', true),
+      (4, 'Read Access Memory', false),
+      (4, 'Run Active Memory', false),
+      (4, 'Random Allocation Mother', false),
 
-    (5, 'Manages hardware and software', true),
-    (5, 'Increases brightness', false),
-    (5, 'Connects to the internet', false),
-    (5, 'Deletes apps', false),
+      (5, 'Manages hardware and software', true),
+      (5, 'Increases brightness', false),
+      (5, 'Connects to the internet', false),
+      (5, 'Deletes apps', false),
 
-    (6, 'Windows', true),
-    (6, 'Microsoft Word', false),
-    (6, 'Photoshop', false),
-    (6, 'Chrome', false),
+      (6, 'Windows', true),
+      (6, 'Microsoft Word', false),
+      (6, 'Photoshop', false),
+      (6, 'World of Warcraft', false),
 
-    (7, 'Spreadsheet application', true),
-    (7, 'System software', false),
-    (7, 'Database', false),
-    (7, 'Web browser', false),
+      (7, 'Spreadsheet application', true),
+      (7, 'System software', false),
+      (7, 'Database', false),
+      (7, 'Web browser', false),
 
-    (8, 'Detect and remove malware', true),
-    (8, 'Speed up internet', false),
-    (8, 'Block ads', false),
-    (8, 'Update drivers', false),
+      (8, 'Detect and remove malware', true),
+      (8, 'Speed up internet', false),
+      (8, 'Block ads', false),
+      (8, 'Update drivers', false),
 
-    (9, 'HyperText Markup Language', true),
-    (9, 'Hyperlink Text Markup Language', false),
-    (9, 'Home Tool Markup Language', false),
-    (9, 'HighText Machine Language', false),
+      (9, 'HyperText Markup Language', true),
+      (9, 'Hyperlink Text Markup Language', false),
+      (9, 'Home Tool Markup Language', false),
+      (9, 'HighText Machine Language', false),
 
-    (10, 'Integer', true),
-    (10, 'String', false),
-    (10, 'Boolean', false),
-    (10, 'Undefined', false),
+      (10, 'Integer', true),
+      (10, 'String', false),
+      (10, 'Boolean', false),
+      (10, 'Undefined', false),
 
-    (11, 'JavaScript', true),
-    (11, 'Java System', false),
-    (11, 'Just Script', false),
-    (11, 'Join Style', false),
+      (11, 'JavaScript', true),
+      (11, 'Java System', false),
+      (11, 'Just Script', false),
+      (11, 'Join Style', false),
 
-    (12, 'Cascading Style Sheets', true),
-    (12, 'Creative Style Scripts', false),
-    (12, 'Control Style Sheet', false),
-    (12, 'Custom Styling Source', false),
+      (12, 'Cascading Style Sheets', true),
+      (12, 'Creative Style Scripts', false),
+      (12, 'Control Style Sheet', false),
+      (12, 'Custom Styling Source', false),
 
-    (13, 'Internet Protocol', true),
-    (13, 'Input Port', false),
-    (13, 'Internal Program', false),
-    (13, 'Info Path', false),
+      (13, 'Internet Protocol', true),
+      (13, 'Input Port', false),
+      (13, 'Internal Program', false),
+      (13, 'Info Path', false),
 
-    (14, 'Router', true),
-    (14, 'Switch', false),
-    (14, 'Hub', false),
-    (14, 'Modem', false),
+      (14, 'Router', true),
+      (14, 'Switch', false),
+      (14, 'Hub', false),
+      (14, 'Modem', false),
 
-    (15, 'HTTPS', true),
-    (15, 'FTP', false),
-    (15, 'SSH', false),
-    (15, 'HTTP', false),
+      (15, 'HTTPS', true),
+      (15, 'FTP', false),
+      (15, 'SSH', false),
+      (15, 'HTTP', false),
 
-    (16, '80', true),
-    (16, '21', false),
-    (16, '443', false),
-    (16, '110', false);
-`,
+      (16, '80', true),
+      (16, '21', false),
+      (16, '443', false),
+      (16, '110', false);
+  `,
 
 
   addUserToDatabase: `
