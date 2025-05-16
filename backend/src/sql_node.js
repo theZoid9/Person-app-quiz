@@ -2,7 +2,7 @@ const { pool } = require("./config/config");
 const { queries } = require("./helper_objects");
 
 async function createTable() {
-  await pool.query(queries.createTable, (error) => {
+  await pool.query(queries.createAnswersTable, (error) => {
     if (error) {
       throw new Error(error.message);
     }
@@ -32,7 +32,26 @@ async function addUser(name) {
     throw new Error("Error adding user: " + error.message);
   }
 }
-module.exports={addUser}
+
+async function getAllCategories() {
+  try {
+    const result = await pool.query(queries.selectAllCategories);
+    return result.rows;
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
+
+async function getQuestionsForSingleCategory(categoryId) {
+  try {
+    const result = await pool.query(queries.getQuestionsForSingleCategory, [categoryId]);
+    return result.rows;
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
+
+module.exports={addUser,getQuestionsForSingleCategory,getAllCategories}
 
 /*addUser("paseka mogoto").then((message) => {
   console.log(message);

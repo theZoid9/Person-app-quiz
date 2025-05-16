@@ -10,7 +10,7 @@ const queries = {
     CREATE TABLE IF NOT EXISTS questions (
       id SERIAL PRIMARY KEY,
       category_id INTEGER NOT NULL REFERENCES categories(id),
-      questions TEXT NOT NULL
+      question TEXT NOT NULL
     );
   `,
 
@@ -22,9 +22,28 @@ const queries = {
     );
   `,
 
+  createUsersTable: `
+    CREATE TABLE IF NOT EXISTS users (
+      id SERIAL PRIMARY KEY,
+      name TEXT NOT NULL
+    );
+  `,
+
   addUserToDatabase: `
     INSERT INTO users (name) VALUES ($1);
-  `
+  `,
+
+  selectAllCategories: `
+    SELECT * FROM categories;
+  `,
+
+  getQuestionsForSingleCategory: `
+    SELECT * FROM questions WHERE category_id = $1;
+  `,
+
+  getSingleQuestionAndAnswers: `
+   ;
+  `,
 };
 
 module.exports = { queries };
