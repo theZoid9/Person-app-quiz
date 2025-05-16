@@ -19,9 +19,23 @@ git
     })
 
   }
- /* createTable().then(result => {
+  createTable().then(result => {
     console.log(result);
-  })*/
+  })
   createQuestionTables().then(message=>{
     console.log(message)
   })
+
+  async function addUser(name) {
+    try {
+      const result = await pool.query(queries.addUserToDatabase, [name]);
+      return `User '${name}' successfully added to the database`;
+    } catch (error) {
+      throw new Error("Error adding user: " + error.message);
+    }
+  }
+  
+  addUser('paseka mogoto').then((message) => {
+    console.log(message);
+  })
+  
