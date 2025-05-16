@@ -1,5 +1,5 @@
 const queries = {
-   createCategoriesTable: `
+  createCategoriesTable: `
     CREATE TABLE IF NOT EXISTS categories (
       id SERIAL PRIMARY KEY,
       name TEXT NOT NULL
@@ -20,6 +20,11 @@ const queries = {
       question_id INTEGER NOT NULL REFERENCES questions(id),
       answer TEXT NOT NULL
     );
+  `,
+
+  addUserToDatabase: `
+    INSERT INTO users (name) VALUES ($1);
   `
 };
-module.exports={queries}
+
+module.exports = { queries };
