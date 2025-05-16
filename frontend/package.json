@@ -1,10 +1,11 @@
 {
-  "name": "quiz app",
+  "name": "quiz-app",
   "version": "1.0.0",
   "description": "frontend side of quiz app",
   "main": "./index.html",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "build": "webpack"
   },
   "author": "aaron jiane",
   "license": "ISC",
