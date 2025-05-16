@@ -15,7 +15,7 @@ async function createTable() {
             throw new Error(error.message);
           }
           return "table questions succefully created";
-
+git
     })
 
   }
