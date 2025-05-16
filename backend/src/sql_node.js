@@ -1,7 +1,7 @@
 const { pool } = require("./config/config");
 const { queries } = require("./helper_objects");
 
-async function createTable() {
+async function createUsersTable() {
   await pool.query(queries.createTable, (error) => {
     if (error) {
       throw new Error(error.message);
@@ -9,7 +9,7 @@ async function createTable() {
   });
   return "table users succefully created";
 }
-async function createQuestionTables() {
+async function createQuestionsTable() {
   await pool.query(queries.createQuestionsTable, (error) => {
     if (error) {
       throw new Error(error.message);
@@ -17,12 +17,15 @@ async function createQuestionTables() {
     return "table questions succefully created";
   });
 }
-createTable().then((result) => {
-  console.log(result);
-});
-createQuestionTables().then((message) => {
-  console.log(message);
-});
+
+async function createAnswersTable() {
+  await pool.query(queries.createAnswersTable, (error) => {
+    if (error){
+      throw new Error(error.message);
+    }
+    return "table answers succefully created";
+  });
+}
 
 async function addUser(name) {
   try {
@@ -32,8 +35,30 @@ async function addUser(name) {
     throw new Error("Error adding user: " + error.message);
   }
 }
-module.exports={addUser}
 
+
+createUsersTable().then((result) => {
+  console.log(result);
+});
+createQuestionsTable().then((message) => {
+  console.log(message);
+});
+createAnswersTable().then((message) => {
+  console.log(message);
+});
+addUser().then((message) => {
+  console.log(message);
+});
+
+
+module.exports = {
+   createUsersTable, 
+   createQuestionsTable, 
+   createAnswersTable, 
+   addUser }
+
+
+   
 /*addUser("paseka mogoto").then((message) => {
   console.log(message);
 });*/
