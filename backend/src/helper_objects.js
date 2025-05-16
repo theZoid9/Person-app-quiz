@@ -1,17 +1,25 @@
 const queries = {
-  createTable: `
+   createCategoriesTable: `
+    CREATE TABLE IF NOT EXISTS categories (
+      id SERIAL PRIMARY KEY,
+      name TEXT NOT NULL
+    );
+  `,
 
-    CREATE TABLE IF NOT EXISTS users(
-      id SERIAL PRIMARY KEY ,
-      name varchar(250) ,
-      score INTEGER          
-  )`,
   createQuestionsTable: `
+    CREATE TABLE IF NOT EXISTS questions (
+      id SERIAL PRIMARY KEY,
+      category_id INTEGER NOT NULL REFERENCES categories(id),
+      questions TEXT NOT NULL
+    );
+  `,
 
-  CREATE TABLE IF NOT EXISTS questions(
-    id SERIAL PRIMARY KEY ,
-    questions varchar(250) 
-         
-)`
+  createAnswersTable: `
+    CREATE TABLE IF NOT EXISTS answers (
+      id SERIAL PRIMARY KEY,
+      question_id INTEGER NOT NULL REFERENCES questions(id),
+      answer TEXT NOT NULL
+    );
+  `
 };
 module.exports={queries}
