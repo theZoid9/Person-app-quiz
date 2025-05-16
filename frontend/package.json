@@ -1,5 +1,5 @@
 {
-  "name": "quiz app",
+  "name": "quiz-app",
   "version": "1.0.0",
   "description": "frontend side of quiz app",
   "main": "./index.html",
