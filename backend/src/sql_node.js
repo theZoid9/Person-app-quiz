@@ -32,6 +32,7 @@ async function addUser(name) {
     throw new Error("Error adding user: " + error.message);
   }
 }
+module.exports={addUser}
 
 /*addUser("paseka mogoto").then((message) => {
   console.log(message);
