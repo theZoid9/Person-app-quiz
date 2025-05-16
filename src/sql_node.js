@@ -9,6 +9,19 @@ async function createTable() {
     });
     return "table users succefully created";
   }
-  createTable().then(result => {
+  async function createQuestionTables(){
+    await pool.query(queries.createQuestionsTable,(error)=>{
+        if (error) {
+            throw new Error(error.message);
+          }
+          return "table questions succefully created";
+
+    })
+
+  }
+ /* createTable().then(result => {
     console.log(result);
+  })*/
+  createQuestionTables().then(message=>{
+    console.log(message)
   })
