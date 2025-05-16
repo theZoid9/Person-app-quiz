@@ -58,7 +58,7 @@ async function insertAnswers() {
 // Full DB Setup
 async function setupDatabase() {
   try {
-    console.log("🔧 Setting up database...");
+    console.log("Setting up database...");
 
     const categoriesMsg = await createCategoriesTable();
     console.log(categoriesMsg);
