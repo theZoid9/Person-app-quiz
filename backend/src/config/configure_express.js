@@ -2,7 +2,10 @@ const express = require("express");
 
 const app = express();
 const bodyParser = require("body-parser");
-const { addUser } = require("../sql_node");
+const { addUser
+  ,createCategoriesTable,
+  createQuestionsTable,
+  createAnswersTable } = require("..sql_node");
 const port = 3000;
 
 app.use(bodyParser.json());
@@ -21,6 +24,10 @@ app.post("/api/users", async (req, res) => {
       return res.status(500).json({ error:error.message});
     }
   });
+
+
+
+
   app.listen(port, () => {
     console.log(` Server running at http://localhost:${port}`);
   });
