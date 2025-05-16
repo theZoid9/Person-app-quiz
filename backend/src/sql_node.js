@@ -1,64 +1,96 @@
 const { pool } = require("./config/config");
 const { queries } = require("./helper_objects");
 
-async function createUsersTable() {
-  await pool.query(queries.createTable, (error) => {
-    if (error) {
-      throw new Error(error.message);
-    }
-  });
-  return "table users succefully created";
-}
-async function createQuestionsTable() {
-  await pool.query(queries.createQuestionsTable, (error) => {
-    if (error) {
-      throw new Error(error.message);
-    }
-    return "table questions succefully created";
-  });
-}
-
-async function createAnswersTable() {
-  await pool.query(queries.createAnswersTable, (error) => {
-    if (error){
-      throw new Error(error.message);
-    }
-    return "table answers succefully created";
-  });
-}
-
-async function addUser(name) {
+async function createCategoriesTable() {
   try {
-    const result = await pool.query(queries.addUserToDatabase, [name]);
-    return `User '${name}' successfully added to the database`;
+    await pool.query(queries.createCategoriesTable);
+    return "Table 'categories' successfully created";
   } catch (error) {
-    throw new Error("Error adding user: " + error.message);
+    throw new Error("Error creating 'categories' table: " + error.message);
   }
 }
 
+async function createQuestionsTable() {
+  try {
+    await pool.query(queries.createQuestionsTable);
+    return "Table 'questions' successfully created";
+  } catch (error) {
+    throw new Error("Error creating 'questions' table: " + error.message);
+  }
+}
 
-createUsersTable().then((result) => {
-  console.log(result);
-});
-createQuestionsTable().then((message) => {
-  console.log(message);
-});
-createAnswersTable().then((message) => {
-  console.log(message);
-});
-addUser().then((message) => {
-  console.log(message);
-});
+async function createAnswersTable() {
+  try {
+    await pool.query(queries.createAnswersTable);
+    return "Table 'answers' successfully created";
+  } catch (error) {
+    throw new Error("Error creating 'answers' table: " + error.message);
+  }
+}
 
+async function insertCategories() {
+  try {
+    await pool.query(queries.insertCategories);
+    console.log("Categories inserted");
+  } catch (error) {
+    console.error("Insert categories error:", error.message);
+  }
+}
+
+async function insertQuestions() {
+  try {
+    await pool.query(queries.insertQuestions);
+    console.log("Questions inserted");
+  } catch (error) {
+    console.error("Insert questions error:", error.message);
+  }
+}
+
+async function insertAnswers() {
+  try {
+    await pool.query(queries.insertAnswers);
+    console.log("Answers inserted");
+  } catch (error) {
+    console.error("Insert answers error:", error.message);
+  }
+}
+
+// Full DB Setup
+async function setupDatabase() {
+  try {
+    console.log("🔧 Setting up database...");
+
+    const categoriesMsg = await createCategoriesTable();
+    console.log(categoriesMsg);
+
+    const questionsMsg = await createQuestionsTable();
+    console.log(questionsMsg);
+
+    const answersMsg = await createAnswersTable();
+    console.log(answersMsg);
+
+    // Now insert data
+    await insertCategories();
+    await insertQuestions();
+    await insertAnswers();
+
+  } catch (error) {
+    console.error("Setup error:", error.message);
+  } finally {
+    await pool.end();
+  }
+}
+
+setupDatabase();
 
 module.exports = {
-   createUsersTable, 
-   createQuestionsTable, 
-   createAnswersTable, 
-   addUser }
+  createCategoriesTable,
+  createQuestionsTable,
+  createAnswersTable
+};
 
 
-   
+
 /*addUser("paseka mogoto").then((message) => {
   console.log(message);
 });*/
