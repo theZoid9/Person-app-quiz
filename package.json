@@ -1,0 +1,16 @@
+{
+  "name": "person-app-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "quiz application",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start": "docker-compose up --build",
+    "stop": "docker-compose down"
+  },
+  "author": "",
+  "license": "ISC"
+}
