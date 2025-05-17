@@ -35,7 +35,7 @@ const queries = {
   ('Hardware'),
   ('Operating Systems'),
   ('Web Development'),
-  ('Networking');
+  ('Network');
 `,
 
   insertQuestions: `
