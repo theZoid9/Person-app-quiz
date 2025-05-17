@@ -1,0 +1,34 @@
+header{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #6a5acd;
+}
+header h2{
+    padding: 0 10px;
+    font-size: 1.3rem;
+}
+
+
+main{
+    padding-top: 50px;
+    text-align: center;
+}
+
+footer{
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #6a5acd;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 8px;
+}

@@ -4,7 +4,9 @@
   "description": "frontend side of quiz app",
   "main": "./index.html",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "author": "aaron jiane",
   "license": "ISC",
@@ -12,7 +14,8 @@
     "jasmine": "^5.7.1",
     "prettier": "^3.5.3",
     "webpack": "^5.99.8",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   },
   "dependencies": {
     "dotenv": "^16.5.0"
