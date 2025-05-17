@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../../../frontend/index.html"));
 });
 
-app.post("/api/users", async (req, res) => {
+app.post("/api/leaderboard", async (req, res) => {
   const { name } = req.body;
 
   if (!name) {
@@ -24,7 +24,7 @@ app.post("/api/users", async (req, res) => {
   }
 
   try {
-    await pool.query(queries.addUserToDatabase, [name]);
+    await pool.query(queries.createLeaderboardTable, [name]);
 
     return res.status(201).json({ message: `User '${name}' added successfully` });
   } catch (error) {
