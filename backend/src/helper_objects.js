@@ -151,7 +151,10 @@ const queries = {
 
   addUserToDatabase: `
     INSERT INTO users (name) VALUES ($1);
-  `
+  `,
+  getAllCategories:`SELECT * FROM categories`,
+  getQuestionByCatergory:`SELECT * FROM questions WHERE category_id = $1;`,
+  getAllAnswersForQuestion:` SELECT answers FROM answers WHERE question_id = $1;`
 };
 
 module.exports = { queries };
