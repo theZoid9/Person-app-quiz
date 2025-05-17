@@ -13,7 +13,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello from the backend!");
+  res.sendFile(path.join(__dirname, "../../../frontend/index.html"));
 });
 
 app.post("/api/users", async (req, res) => {
