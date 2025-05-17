@@ -28,6 +28,15 @@ async function createAnswersTable() {
   }
 }
 
+async function createLeaderboardTable() {
+  try {
+    await pool.query(queries.createLeaderboardTable);
+    return "Table 'leaderboard' successfully created";
+  } catch (error) {
+    throw new Error("Error creating 'leaderboard' table: " + error.message);
+  }
+}
+
 async function insertCategories() {
   try {
     await pool.query(queries.insertCategories);
@@ -69,6 +78,9 @@ async function setupDatabase() {
     const answersMsg = await createAnswersTable();
     console.log(answersMsg);
 
+    const leaderboardMsg =  await createLeaderboardTable();
+    console.log(leaderboardMsg);
+
     // Now insert data
     await insertCategories();
     await insertQuestions();
@@ -86,7 +98,8 @@ setupDatabase();
 module.exports = {
   createCategoriesTable,
   createQuestionsTable,
-  createAnswersTable
+  createAnswersTable,
+  createLeaderboardTable
 };
 
 
