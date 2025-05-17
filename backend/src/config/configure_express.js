@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const { pool } = require("./config"); 
 const { queries } = require("../helper_objects");
 const app = express();
-const cors = require('cors')
+//const cors = require('cors')
 
 app.use(express.static(path.join(__dirname, "../../../frontend")));
 
