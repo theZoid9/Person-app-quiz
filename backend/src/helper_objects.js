@@ -35,7 +35,7 @@ const queries = {
   ('Hardware'),
   ('Operating Systems'),
   ('Web Development'),
-  ('Networking');
+  ('Network');
 `,
 
   insertQuestions: `
@@ -146,15 +146,7 @@ const queries = {
       (16, '21'),
       (16, '443'),
       (16, '110');
-  `,
-
-
-  addUserToDatabase: `
-    INSERT INTO users (name) VALUES ($1);
-  `,
-  getAllCategories:`SELECT * FROM categories`,
-  getQuestionByCatergory:`SELECT * FROM questions WHERE category_id = $1;`,
-  getAllAnswersForQuestion:` SELECT answers FROM answers WHERE question_id = $1;`
-};
+  `
+}
 
 module.exports = { queries };
