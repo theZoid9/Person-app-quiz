@@ -1,5 +1,5 @@
  {
   "scripts": {
-  "start": "node backend/config/configure_express.js"
+  "start": "node backend/src/config/configure_express.js"
 }
  }
