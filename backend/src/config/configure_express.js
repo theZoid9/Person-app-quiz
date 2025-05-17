@@ -7,6 +7,10 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello from the backend!");
+});
+
 app.post("/api/users", async (req, res) => {
   const { name } = req.body;
 
