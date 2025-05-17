@@ -1,3 +1,6 @@
+app.use(express.static(path.join(__dirname, "../../../frontend")));
+
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const { pool } = require("./config"); 
