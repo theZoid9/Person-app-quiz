@@ -1,4 +1,3 @@
-app.use(express.static(path.join(__dirname, "../../../frontend")));
 
 
 const express = require("express");
@@ -6,6 +5,9 @@ const bodyParser = require("body-parser");
 const { pool } = require("./config"); 
 const { queries } = require("../helper_objects");
 const app = express();
+
+app.use(express.static(path.join(__dirname, "../../../frontend")));
+
 const port = 3000;
 
 app.use(bodyParser.json());
