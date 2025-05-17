@@ -1,8 +1,5 @@
-const categoryButtons = document.querySelectorAll(".category-btn");
-
-categoryButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    categoryButtons.forEach(b => b.classList.remove("selected"));
-    btn.classList.add("selected");
-  })
-})
+  document.querySelectorAll(".category-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      window.location.href = "quiz.html";
+    });
+  });
