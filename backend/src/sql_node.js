@@ -64,7 +64,7 @@ async function insertAnswers() {
   }
 }
 
-// Full DB Setup
+// Full DB Setup testing
 async function setupDatabase() {
   try {
     console.log("Setting up database...");
@@ -81,7 +81,7 @@ async function setupDatabase() {
     const leaderboardMsg =  await createLeaderboardTable();
     console.log(leaderboardMsg);
 
-    // Now insert data
+
     await insertCategories();
     await insertQuestions();
     await insertAnswers();
