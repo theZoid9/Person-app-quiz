@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/leaderboard",{
+        const response = await fetch("https://refreshing-vibrancy-production.up.railway.app/api/leaderboard",{
           method: "POST",
           headers: {
             "Content-Type": "application/json"
