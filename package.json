@@ -1,6 +1,8 @@
  {
   "scripts": {
   "start": "node backend/src/config/configure_express.js"
-  
+},
+"dependencies": {
+  "express": "^4.18.2"
 }
  }
