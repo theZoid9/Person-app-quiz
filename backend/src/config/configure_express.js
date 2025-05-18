@@ -32,7 +32,14 @@ app.post("/api/leaderboard", async (req, res) => {
   }
 
   try {
-    await pool.query(queries.createLeaderboardTable, [name]);
+    // 1. Ensure table exists
+    await pool.query(queries.createLeaderboardTable);
+
+    // 2. Insert new user
+    await pool.query(
+      'INSERT INTO leadboard (user_name, score) VALUES ($1, $2)',
+      [name, 0]
+    );
 
     return res.status(201).json({ message: `User '${name}' added successfully` });
   } catch (error) {
@@ -82,6 +89,9 @@ app.get("/api/answers/:questionId", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.use(express.static(path.join(__dirname, "../../../frontend")));
+
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

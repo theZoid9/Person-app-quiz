@@ -1,6 +1,7 @@
 const { pool } = require("./config/config");
 const { queries } = require("./helper_objects");
 
+
 async function createCategoriesTable() {
   try {
     await pool.query(queries.createCategoriesTable);
