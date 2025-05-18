@@ -1,8 +1,3 @@
-const getUsers=async()=>{
-  const res = await fetch("/api/users");
-  return await res.json();
-}
-
 const getAnswers=async()=>{
   const res = await fetch("/api/answers");
   return await res.json();
@@ -13,18 +8,13 @@ const getCategory=async()=>{
   return await res.json();
 }
 
-const getQuestions=async()=>{
-  const res = await fetch("/api/questions");
+const getHighscores=async()=>{
+  const res = await fetch("/api/getHighscores");
   return await res.json();
 }
 
-const getleaderboard=async()=>{
-  const res = await fetch("/api/leaderboard");
-  return await res.json();
-}
-
-const addUser =async(user)=>{
-  const res = await fetch("/api/users", {
+const addHighscores=async(user)=>{
+  const res = await fetch("/api/addHighscores", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(user)
@@ -32,4 +22,4 @@ const addUser =async(user)=>{
   return await res.json();
 }
 
-module.exports={addUser,getUsers,getAnswers,getCategory,getleaderboard,getQuestions}
+module.exports={getAnswers,getcategory,addHighscores,getHighscores}
