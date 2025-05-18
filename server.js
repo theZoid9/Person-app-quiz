@@ -25,6 +25,7 @@ app.get("/api/users", (req, res) => {
 });
 
 
+
 app.post("/api/users", (req, res) => {
   const newUser = req.body;
 
@@ -41,6 +42,37 @@ app.post("/api/users", (req, res) => {
     });
   });
 });
+
+app.get("/api/answers", (req, res) => {
+  const answerPath = path.join(__dirname, "data", "answer.json");
+  fs.readFile(answerPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read answers" });
+
+    const answers = JSON.parse(data);
+    res.json(answers);
+  });
+});
+
+app.get("/api/category", (req, res) => {
+  const categoryPath = path.join(__dirname, "data", "categories.json");
+  fs.readFile(categoryPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read categories" });
+
+    const categories = JSON.parse(data);
+    res.json(categories);
+  });
+});
+
+app.get("/api/leaderboard", (req, res) => {
+  const leaderboardPath = path.join(__dirname, "data", "leaderboard.json");
+  fs.readFile(leaderboardPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read leaderboard" });
+
+    const leaderboard = JSON.parse(data);
+    res.json(leaderboard);
+  });
+});
+
 
 
 app.listen(PORT, () => {

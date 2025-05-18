@@ -3,6 +3,11 @@ const getUsers=async()=>{
   return await res.json();
 }
 
+const getAnswers=async()=>{
+  const res = await fetch("/api/answers");
+  return await res.json();
+}
+
 const addUser =async(user)=>{
   const res = await fetch("/api/users", {
     method: "POST",
