@@ -19,7 +19,6 @@ startForm.addEventListener("submit", async (event) => {
     showMessage("Please enter your name.", "error");
     return;
   }
-
   try {
     const user = { name: username, score: 0 };
     const result = await addHighScores(user);
