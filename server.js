@@ -62,16 +62,6 @@ app.get("/api/category", (req, res) => {
   });
 });
 
-app.get("/api/leaderboard", (req, res) => {
-  const leaderboardPath = path.join(__dirname, "data", "leaderboard.json");
-  fs.readFile(leaderboardPath, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Failed to read leaderboard" });
-
-    const leaderboard = JSON.parse(data);
-    res.json(leaderboard);
-  });
-});
-
 app.get("/api/questions", (req, res) => {
   const questionsPath = path.join(__dirname, "data", "questions.json");
   fs.readFile(questionsPath, "utf8", (err, data) => {

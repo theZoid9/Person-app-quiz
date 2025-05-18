@@ -22,4 +22,4 @@ const addHighscores=async(user)=>{
   return await res.json();
 }
 
-module.exports={getAnswers,getcategory,addHighscores,getHighscores}
+module.exports={getAnswers,getCategory,addHighscores,getHighscores}
