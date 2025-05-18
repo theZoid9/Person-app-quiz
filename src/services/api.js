@@ -57,12 +57,13 @@ const addHighScores = async (user) => {
       body: JSON.stringify(user)
     });
 
+    const data = await res.json();
+    console.log("Success:", data);
+
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
 
-    const data = await res.json();
-    console.log("Success:", data);
     return data;
   } catch (error) {
     console.error("Error posting score:", error);
