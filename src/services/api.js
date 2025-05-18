@@ -47,7 +47,7 @@ const getHighscores = async () => {
 };
 
 
-const addHighscores = async (user) => {
+const addHighScores = async (user) => {
   try {
     const res = await fetch("https://person-app-quiz-production.up.railway.app/api/highscores", {
       method: "POST",
@@ -74,4 +74,4 @@ const user1 = {name:"Zaid", score: 14}
 const user2 = {name:"Paseka", score: 16}
 addHighscores(user)
 
-module.exports={getAnswers,getCategory,addHighscores,getHighscores}
+module.exports={getAnswers,getCategory,addHighScores,getHighscores}
