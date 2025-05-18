@@ -1,21 +1,25 @@
-window.addEventListener("load", () => {
-      document.body.style.opacity = "1";
-})
 
-document.addEventListener("DOMContentLoaded", () => {
-    const startBtn = document.getElementById("get-started-btn");
+document.getElementById("getStartedBtn").addEventListener("click", () => {
+    const username = document.getElementById("username").value.trim();
 
-startBtn.addEventListener("click", async () => {
-  const usernameInput = document.getElementById("username");
-  const name = usernameInput.value.trim();
+    if (!username) {
+      alert("Please enter a name.");
+      return;
+    }
 
-  if (!name) {
-    alert("Please enter your name.")
-    return;
-  }
-
-  
-});
-
-})
-
+    fetch("/api/highscores", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name: username ,"score": 0 })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log("Success:", data);
+     
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+  });
