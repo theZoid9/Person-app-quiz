@@ -14,15 +14,15 @@ const getHighscores=async()=>{
 }
 
 
-const addHighscores=async(user,score)=>{
+const addHighscores=async(user)=>{
   const res = await fetch("/api/highscores", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({name: user, score: score})
+    body: JSON.stringify(user)
   });
   return await res.json();
 }
 
-addHighscores("Aaron",10)
+addHighscores({"name":"Aaron", "score: 10})
 
 module.exports={getAnswers,getCategory,addHighscores,getHighscores}
