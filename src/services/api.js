@@ -8,8 +8,13 @@ const getAnswers=async()=>{
   return await res.json();
 }
 
-const getcategory=async()=>{
+const getCategory=async()=>{
   const res = await fetch("/api/category");
+  return await res.json();
+}
+
+const getQuestions=async()=>{
+  const res = await fetch("/api/questions");
   return await res.json();
 }
 
@@ -27,4 +32,4 @@ const addUser =async(user)=>{
   return await res.json();
 }
 
-module.exports={addUser,getUsers,getAnswers,getcategory,getleaderboard}
+module.exports={addUser,getUsers,getAnswers,getCategory,getleaderboard,getQuestions}

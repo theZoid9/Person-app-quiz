@@ -73,7 +73,15 @@ app.get("/api/leaderboard", (req, res) => {
   });
 });
 
+app.get("/api/questions", (req, res) => {
+  const questionsPath = path.join(__dirname, "data", "questions.json");
+  fs.readFile(questionsPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read quesions" });
 
+    const questions = JSON.parse(data);
+    res.json(questions);
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
