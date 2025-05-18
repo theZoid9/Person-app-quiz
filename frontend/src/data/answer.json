@@ -1,0 +1,147 @@
+[
+    {
+      "question_id": 1,
+      "options": [
+        { "text": "Central Processing Unit", "is_correct": true },
+        { "text": "Central Progress Unit", "is_correct": false },
+        { "text": "Center Park Unit", "is_correct": false },
+        { "text": "Cd Papper Unit", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 2,
+      "options": [
+        { "text": "Power Supply Unit", "is_correct": true },
+        { "text": "Power Super Unit", "is_correct": false },
+        { "text": "Power Small User", "is_correct": false },
+        { "text": "Power Supply Users", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 3,
+      "options": [
+        { "text": "Graphics Processing Unit", "is_correct": true },
+        { "text": "Gaming Program Utility", "is_correct": false },
+        { "text": "Graphical Power Unit", "is_correct": false },
+        { "text": "Graphic Performance Unit", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 4,
+      "options": [
+        { "text": "Random Access Memory", "is_correct": true },
+        { "text": "Read Access Memory", "is_correct": false },
+        { "text": "Run Active Memory", "is_correct": false },
+        { "text": "Random Allocation Mother", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 5,
+      "options": [
+        { "text": "Manages hardware and software", "is_correct": true },
+        { "text": "Increases brightness", "is_correct": false },
+        { "text": "Connects to the internet", "is_correct": false },
+        { "text": "Deletes apps", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 6,
+      "options": [
+        { "text": "Windows", "is_correct": true },
+        { "text": "Microsoft Word", "is_correct": false },
+        { "text": "Photoshop", "is_correct": false },
+        { "text": "World of Warcraft", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 7,
+      "options": [
+        { "text": "Spreadsheet application", "is_correct": true },
+        { "text": "System software", "is_correct": false },
+        { "text": "Database", "is_correct": false },
+        { "text": "Web browser", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 8,
+      "options": [
+        { "text": "Detect and remove malware", "is_correct": true },
+        { "text": "Speed up internet", "is_correct": false },
+        { "text": "Block ads", "is_correct": false },
+        { "text": "Update drivers", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 9,
+      "options": [
+        { "text": "HyperText Markup Language", "is_correct": true },
+        { "text": "Hyperlink Text Markup Language", "is_correct": false },
+        { "text": "Home Tool Markup Language", "is_correct": false },
+        { "text": "HighText Machine Language", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 10,
+      "options": [
+        { "text": "Integer", "is_correct": false },
+        { "text": "String", "is_correct": false },
+        { "text": "Boolean", "is_correct": false },
+        { "text": "Undefined", "is_correct": true }
+      ]
+    },
+    {
+      "question_id": 11,
+      "options": [
+        { "text": "JavaScript", "is_correct": true },
+        { "text": "Java System", "is_correct": false },
+        { "text": "Just Script", "is_correct": false },
+        { "text": "Join Style", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 12,
+      "options": [
+        { "text": "Cascading Style Sheets", "is_correct": true },
+        { "text": "Creative Style Scripts", "is_correct": false },
+        { "text": "Control Style Sheet", "is_correct": false },
+        { "text": "Custom Styling Source", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 13,
+      "options": [
+        { "text": "Internet Protocol", "is_correct": true },
+        { "text": "Input Port", "is_correct": false },
+        { "text": "Internal Program", "is_correct": false },
+        { "text": "Info Path", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 14,
+      "options": [
+        { "text": "Router", "is_correct": true },
+        { "text": "Switch", "is_correct": false },
+        { "text": "Hub", "is_correct": false },
+        { "text": "Modem", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 15,
+      "options": [
+        { "text": "HTTPS", "is_correct": true },
+        { "text": "FTP", "is_correct": false },
+        { "text": "SSH", "is_correct": false },
+        { "text": "HTTP", "is_correct": false }
+      ]
+    },
+    {
+      "question_id": 16,
+      "options": [
+        { "text": "80", "is_correct": true },
+        { "text": "21", "is_correct": false },
+        { "text": "443", "is_correct": false },
+        { "text": "110", "is_correct": false }
+      ]
+    }
+  ]
+  

@@ -32,7 +32,7 @@ startBtn.addEventListener("click", async () => {
       alert("Error: " + result.error);
     }
   } catch (error) {
-    alert("Failed to connect to the server.");
+    alert("Failed to connect to the server."+ error.message);
     console.error("Fetch error:", error);
   }
 });
