@@ -11,9 +11,10 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/services', express.static(path.join(__dirname, 'services')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 
+
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "pages", "whoops.html"));
-})
+  res.status(404).sendFile(path.join(__dirname, "src", "pages", "whoops.html"));
+});
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src", "index.html"));
