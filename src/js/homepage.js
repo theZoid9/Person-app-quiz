@@ -7,7 +7,7 @@ document.getElementById("getStartedBtn").addEventListener("click", () => {
       return;
     }
 
-    fetch("/api/highscores", {
+    fetch("person-app-quiz-production.up.railway.app/api/highscores", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
