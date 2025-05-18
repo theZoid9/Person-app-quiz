@@ -15,13 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("https://refreshing-vibrancy-production.up.railway.app/api/leaderboard",{
+        const response = await fetch("https://localhost:3000/api/leaderboard",{
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({name}),
-      //     credentials: "include"
         });
 
         const result = await response.json();
