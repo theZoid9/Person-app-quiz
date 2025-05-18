@@ -3,7 +3,7 @@ const getAnswers=async()=>{
   return await res.json();
 }
 
-const getcategory=async()=>{
+const getCategory=async()=>{
   const res = await fetch("/api/category");
   return await res.json();
 }
