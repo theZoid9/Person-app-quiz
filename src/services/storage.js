@@ -1,4 +1,4 @@
-// ✅ Load answers from local JSON file
+
 export const getAnswers = async () => {
   try {
     const res = await fetch("../data/answers.json");
@@ -11,7 +11,7 @@ export const getAnswers = async () => {
   }
 };
 
-// ✅ Load categories from local JSON file
+
 export const getCategory = async () => {
   try {
     const res = await fetch("../data/categories.json");
@@ -24,7 +24,7 @@ export const getCategory = async () => {
   }
 };
 
-// ✅ Get highscores from localStorage
+
 export const getHighscores = async () => {
   try {
     const data = JSON.parse(localStorage.getItem("highscores")) || [];
@@ -36,7 +36,6 @@ export const getHighscores = async () => {
   }
 };
 
-// ✅ Add a highscore to localStorage
 const addHighScores = async (user) => {
   try {
     const highscores = JSON.parse(localStorage.getItem("highscores")) || [];

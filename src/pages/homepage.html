@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/homepage.css"/>
-    <link rel="stylesheet" href="../styles/main.css"/>
-    <title>homepage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/homepage.css"/>
+  <link rel="stylesheet" href="../styles/main.css"/>
+  <title>Homepage</title>
 </head>
 <body>
-<header>
+  <header>
     <h2>Brain Tease</h2>
-</header>
+  </header>
 
 <main>
 <section id="welcome-screen">
@@ -36,9 +36,47 @@
 
 </main>
 
-<footer>
-    © 2025 Brain Tease
-</footer>
-  <script src="../js/homepage.js" type="module"></script>
+  <footer>© 2025 Brain Tease</footer>
+
+  <script type="module">
+    const form = document.getElementById("start-form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      if (!username) {
+        alert("Please enter your name.");
+        return;
+      }
+
+      const userData = {
+        name: username,
+        score: 0
+      };
+
+      try {
+        const res = await fetch("http://localhost:3000/api/highscores", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(userData)
+        });
+
+        if (!res.ok) {
+          const error = await res.json();
+          alert("Error: " + (error.error || "Unknown error"));
+          return;
+        }
+
+        const result = await res.json();
+        console.log("Success:", result);
+        window.location.href = "../pages/category.html";
+      } catch (err) {
+        console.error("Failed to connect to the server", err);
+        alert("Failed to connect to the server.");
+      }
+    });
+  </script>
 </body>
 </html>
