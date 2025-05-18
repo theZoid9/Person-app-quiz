@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/api/getHighscores", (req, res) => {
+app.get("/api/highscores", (req, res) => {
   const usersPath = path.join(__dirname, "data", "highscores.json");
   fs.readFile(usersPath, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Failed to read users" });
@@ -25,7 +25,7 @@ app.get("/api/getHighscores", (req, res) => {
 });
 
 
-app.post("/api/addHighscores", (req, res) => {
+app.post("/api/highscores", (req, res) => {
   const newUser = req.body;
 
   const usersPath = path.join(__dirname, "data", "highscores.json");
@@ -59,16 +59,6 @@ app.get("/api/category", (req, res) => {
 
     const categories = JSON.parse(data);
     res.json(categories);
-  });
-});
-
-app.get("/api/leaderboard", (req, res) => {
-  const leaderboardPath = path.join(__dirname, "data", "leaderboard.json");
-  fs.readFile(leaderboardPath, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Failed to read leaderboard" });
-
-    const leaderboard = JSON.parse(data);
-    res.json(leaderboard);
   });
 });
 

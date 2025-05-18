@@ -9,12 +9,12 @@ const getCategory=async()=>{
 }
 
 const getHighscores=async()=>{
-  const res = await fetch("/api/getHighscores");
+  const res = await fetch("/api/highscores");
   return await res.json();
 }
 
 const addHighscores=async(user)=>{
-  const res = await fetch("/api/addHighscores", {
+  const res = await fetch("/api/highscores", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(user)
@@ -22,4 +22,4 @@ const addHighscores=async(user)=>{
   return await res.json();
 }
 
-module.exports={getAnswers,getcategory,addHighscores,getHighscores}
+module.exports={getAnswers,getCategory,addHighscores,getHighscores}
