@@ -5,20 +5,22 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
 app.use(express.static(path.join(__dirname, "src")));
 app.use('/pages', express.static(path.join(__dirname, 'pages')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/services', express.static(path.join(__dirname, 'services')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 
-app.use((req, res) => {
-  res.status(404).send("./src/pages/whoops.html");
-})
 app.use(express.json());
+
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src", "index.html"));
+});
+
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "pages", "whoops.html"));
 });
 
 
