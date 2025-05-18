@@ -1,12 +1,22 @@
-const { Pool } = require("pg");
-
-if (!process.env.DATABASE_URL) {
-  throw new Error("Missing DATABASE_URL environment variable.");
-}
+require('dotenv').config();
+const { Pool } = require('pg');
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  // possibly more config here
+  ssl: {
+    rejectUnauthorized: false, 
+  },
 });
 
-module.exports = { pool };
+async function test() {
+  try {
+    const res = await pool.query('SELECT NOW()');
+    console.log('Connected! Time:', res.rows[0]);
+  } catch (err) {
+    console.error('Connection error:', err);
+  } finally {
+    await pool.end();
+  }
+}
+
+test();
