@@ -5,19 +5,20 @@ const bodyParser = require("body-parser");
 const { pool } = require("./config"); 
 const { queries } = require("../helper_objects");
 const app = express();
-const cors = require('cors')
+//const cors = require('cors')
 
 app.use(express.static(path.join(__dirname, "../../../frontend")));
 
 const port = 3000;
 
 app.use(bodyParser.json());
-
+/*
 app.use(cors({
   origin: "https://refreshing-vibrancy-production.up.railway.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true 
 }))
+*/
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../../../frontend/index.html"));
