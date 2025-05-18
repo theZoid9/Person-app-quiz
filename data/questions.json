@@ -1,43 +1,82 @@
 [
-    {
-      "id": 1,
-      "category_id": 1,
-      "question": "What does CPU stand for?"
-    },
-    {
-      "id": 2,
-      "category_id": 1,
-      "question": "What does PSU stand for?"
-    },
-    {
-      "id": 3,
-      "category_id": 2,
-      "question": "What does an operating system do?"
-    },
-    {
-      "id": 4,
-      "category_id": 2,
-      "question": "Which of these is an operating system?"
-    },
-    {
-      "id": 5,
-      "category_id": 3,
-      "question": "What does HTML stand for?"
-    },
-    {
-      "id": 6,
-      "category_id": 3,
-      "question": "What does CSS stand for?"
-    },
-    {
-      "id": 7,
-      "category_id": 4,
-      "question": "What does IP stand for?"
-    },
-    {
-      "id": 8,
-      "category_id": 4,
-      "question": "Which device directs data between networks?"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "category_id": 1,
+    "question": "What does CPU stand for?"
+  },
+  {
+    "id": 2,
+    "category_id": 1,
+    "question": "What does PSU stand for?"
+  },
+  {
+    "id": 3,
+    "category_id": 1,
+    "question": "GPU stands for?"
+  },
+  {
+    "id": 4,
+    "category_id": 1,
+    "question": "What does RAM stand for?"
+  },
+  {
+    "id": 5,
+    "category_id": 2,
+    "question": "What does an operating system do?"
+  },
+  {
+    "id": 6,
+    "category_id": 2,
+    "question": "Which of these is an operating system?"
+  },
+  {
+    "id": 7,
+    "category_id": 2,
+    "question": "What type of software is MS Excel?"
+  },
+  {
+    "id": 8,
+    "category_id": 2,
+    "question": "What is the purpose of antivirus software?"
+  },
+  {
+    "id": 9,
+    "category_id": 3,
+    "question": "What does HTML stand for?"
+  },
+  {
+    "id": 10,
+    "category_id": 3,
+    "question": "Which data type is NOT in JavaScript?"
+  },
+  {
+    "id": 11,
+    "category_id": 3,
+    "question": "What does JS stand for?"
+  },
+  {
+    "id": 12,
+    "category_id": 3,
+    "question": "What does CSS stand for?"
+  },
+  {
+    "id": 13,
+    "category_id": 4,
+    "question": "What does IP stand for?"
+  },
+  {
+    "id": 14,
+    "category_id": 4,
+    "question": "Which device directs data between networks?"
+  },
+  {
+    "id": 15,
+    "category_id": 4,
+    "question": "What is secure web protocol?"
+  },
+  {
+    "id": 16,
+    "category_id": 4,
+    "question": "HTTP port?"
+  }
+]
