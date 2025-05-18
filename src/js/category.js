@@ -1,30 +1,26 @@
-  /*document.querySelectorAll(".category-btn").forEach(button => {
+  document.querySelectorAll(".category-btn").forEach(button => {
     button.addEventListener("click", () => {
       window.location.href = "quiz.html";
     });
   });
-*/
 
-const fs = require('fs');
+async function getQuestionsById(id) {
+  try {
+    const response = await fetch('src/data/questions.json'); 
+    if (!response.ok) throw new Error('Failed to fetch questions');
+    const data = await response.json();
 
-const data = JSON.parse(fs.readFileSync('src/data/questions.json', 'utf8'));
+    const questions = data
+      .filter(item => item.category_id === id)
+      .map(item => item.question);
 
-function getQuestionsById(id){
-  const data = JSON.parse(fs.readFileSync('src/data/questions.json', 'utf8'));
-  let questions=[]
+    return questions;
 
-  for(let i=0;i<data.length;i++){
-
-    if(data[i].category_id===id){
-      questions.push(data[i].question)
-
-    }
-
-
+  } catch (error) {
+    throw new Error(error.message)
   }
-  return questions
-
-
 }
-console.log(getQuestionsById(1))
+
+
+
 
