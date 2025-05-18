@@ -2,7 +2,6 @@ let timeLeft = 60;
 const timerDisplay = document.getElementById("timer");
 import dummyData from '../data/quizData.json'
 
-
 const startTimer = () => {
   const timerInterval = setInterval(() => {
     timeLeft--;
