@@ -1,5 +1,7 @@
 let timeLeft = 60;
 const timerDisplay = document.getElementById("timer");
+import dummyData from '../data/quizData.json'
+
 
 const startTimer = () => {
   const timerInterval = setInterval(() => {
@@ -39,7 +41,7 @@ let quizData = [];
 let currentIndex = 0;
 let score = 0;
 
-
+/*
 const dummyData = [
   {
     question: "What does CPU stand for?",
@@ -57,7 +59,7 @@ const dummyData = [
     answer: "Random Access Memory"
   }
 ];
-
+*/
 
 const loadQuestion = () => {
   const q = quizData[currentIndex];

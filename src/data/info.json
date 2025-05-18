@@ -1,9 +1,8 @@
 [
   {
-    "id": 1,
-    "Category": "1",
+ 
     "Question": "What does CPU stand for?",
-    "Possible": [
+    "options": [
       "Central Processing Unit",
       "Central Progress Unit",
       "Center Park Unit",
@@ -12,8 +11,7 @@
     "answer": "Central Processing Unit"
   },
   {
-    "id": 2,
-    "Category": "1",
+
     "Question": "What does PSU stand for?",
     "Possible": [
       "Power Supply Unit",
@@ -24,8 +22,7 @@
     "answer": "Power Supply Unit"
   },
   {
-    "id": 3,
-    "Category": "1",
+
     "Question": "GPU stands for?",
     "Possible": [
       "Graphics Processing Unit",
@@ -36,8 +33,7 @@
     "answer": "Graphics Processing Unit"
   },
   {
-    "id": 4,
-    "Category": "1",
+
     "Question": "What does RAM stand for?",
     "Possible": [
       "Random Access Memory",
@@ -48,8 +44,7 @@
     "answer": "Random Access Memory"
   },
   {
-    "id": 5,
-    "Category": "2",
+
     "Question": "What does an operating system do?",
     "Possible": [
       "Manages hardware and software",
@@ -60,8 +55,7 @@
     "answer": "Manages hardware and software"
   },
   {
-    "id": 6,
-    "Category": "2",
+
     "Question": "Which of these is an operating system?",
     "Possible": [
       "Windows",
@@ -72,8 +66,7 @@
     "answer": "Windows"
   },
   {
-    "id": 7,
-    "Category": "2",
+
     "Question": "What type of software is MS Excel?",
     "Possible": [
       "Spreadsheet application",
@@ -84,8 +77,7 @@
     "answer": "Spreadsheet application"
   },
   {
-    "id": 8,
-    "Category": "2",
+
     "Question": "What is the purpose of antivirus software?",
     "Possible": [
       "Detect and remove malware",
@@ -96,8 +88,7 @@
     "answer": "Detect and remove malware"
   },
   {
-    "id": 9,
-    "Category": "3",
+
     "Question": "What does HTML stand for?",
     "Possible": [
       "HyperText Markup Language",
@@ -108,8 +99,7 @@
     "answer": "HyperText Markup Language"
   },
   {
-    "id": 10,
-    "Category": "3",
+
     "Question": "Which data type is NOT in JavaScript?",
     "Possible": [
       "Integer",
@@ -120,8 +110,7 @@
     "answer": "Undefined"
   },
   {
-    "id": 11,
-    "Category": "3",
+
     "Question": "What does JS stand for?",
     "Possible": [
       "JavaScript",
@@ -132,8 +121,7 @@
     "answer": "JavaScript"
   },
   {
-    "id": 12,
-    "Category": "3",
+
     "Question": "What does CSS stand for?",
     "Possible": [
       "Cascading Style Sheets",
@@ -144,8 +132,7 @@
     "answer": "Cascading Style Sheets"
   },
   {
-    "id": 13,
-    "Category": "4",
+
     "Question": "What does IP stand for?",
     "Possible": [
       "Internet Protocol",
@@ -156,8 +143,7 @@
     "answer": "Internet Protocol"
   },
   {
-    "id": 14,
-    "Category": "4",
+
     "Question": "Which device directs data between networks?",
     "Possible": [
       "Router",
@@ -168,8 +154,7 @@
     "answer": "Router"
   },
   {
-    "id": 15,
-    "Category": "4",
+ 
     "Question": "What is secure web protocol?",
     "Possible": [
       "HTTPS",
@@ -180,8 +165,7 @@
     "answer": "HTTPS"
   },
   {
-    "id": 16,
-    "Category": "4",
+
     "Question": "HTTP port?",
     "Possible": [
       "80",
