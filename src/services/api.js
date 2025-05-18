@@ -1,17 +1,50 @@
-const getAnswers=async()=>{
-  const res = await fetch("/api/answers");
-  return await res.json();
-}
+const getAnswers = async () => {
+  try {
+    const res = await fetch("https://person-app-quiz-production.up.railway.app/api/answers");
 
-const getCategory=async()=>{
-  const res = await fetch("/api/category");
-  return await res.json();
-}
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
 
-const getHighscores=async()=>{
-  const res = await fetch("/api/highscores");
-  return await res.json();
-}
+    const data = await res.json();
+    console.log("Fetched answers:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching answers:", error);
+  }
+};
+
+const getCategory = async () => {
+  try {
+    const res = await fetch("https://person-app-quiz-production.up.railway.app/api/category");
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    console.log("Fetched category:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching category:", error);
+  }
+};
+
+const getHighscores = async () => {
+  try {
+    const res = await fetch("https://person-app-quiz-production.up.railway.app/api/highscores");
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    console.log("Fetched highscores:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching highscores:", error);
+  }
+};
 
 
 const addHighscores = async (user) => {
