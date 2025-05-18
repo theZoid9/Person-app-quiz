@@ -1,28 +1,38 @@
-import addHighScores from '../services/api.js'
+import addHighScores from '../services/storage.js'
+const messageBox = document.getElementById("messageBox");
+
+function showMessage(message, type = "success") {
+  messageBox.textContent = message;
+  messageBox.className = `message ${type}`;
+  messageBox.style.display = "block";
+}
 
 const startForm = document.getElementById("start-form");
 
 startForm.addEventListener("submit", async (event) => {
-  event.preventDefault()
+  event.preventDefault();
+  
   const usernameInput = document.getElementById("username");
   const username = usernameInput.value.trim();
 
   if (!username) {
-    alert("Please enter your name.");
+    showMessage("Please enter your name.", "error");
     return;
   }
-  try {
-    const user = {name: username, score: 0}
-    const response = await addHighScores(user)
-    const result = await response.json()
 
-    if(response.ok){
-      console.log(result.message);
+  try {
+    const user = { name: username, score: 0 };
+    const result = await addHighScores(user);
+
+    if (result && result.message === "Success") {
+      showMessage(`Nice name ${username}, signing you in`, "success");
+      setTimeout(() => {
       window.location.href = "../pages/category.html";
-    }else{
-      alert("Error: " + result.error)
+    }, 2000);
+    } else {
+      alert("Failed to save high score.");
     }
-  }catch(error){
-    alert("Failed to connect to the server.", error.message)
+  } catch (error) {
+    showMessage("Failed to sign up, please try again.", "error");
   }
-})
+});

@@ -122,21 +122,21 @@ input[type="text"]:focus {
   font-size: 1rem;
 }
 
-/* Color Themes */
+
 .rank-1 {
-  background: linear-gradient(to right, #fbbf24, #f59e0b); /* Gold */
+  background: linear-gradient(to right, #fbbf24, #f59e0b); 
 }
 .rank-2 {
-  background: linear-gradient(to right, #9ca3af, #6b7280); /* Silver */
+  background: linear-gradient(to right, #9ca3af, #6b7280); 
 }
 .rank-3 {
-  background: linear-gradient(to right, #d97706, #b45309); /* Bronze */
+  background: linear-gradient(to right, #d97706, #b45309); 
 }
 .rank-4 {
-  background: linear-gradient(to right, #3b82f6, #2563eb); /* Blue */
+  background: linear-gradient(to right, #3b82f6, #2563eb); 
 }
 .rank-5 {
-  background: linear-gradient(to right, #10b981, #059669); /* Green */
+  background: linear-gradient(to right, #10b981, #059669); 
 }
 
 
@@ -145,4 +145,24 @@ input[type="text"]:focus {
     font-size: 0.95rem;
     padding: 0.6rem 1rem;
   }
+}
+
+.message {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: none;
+}
+
+.message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
 }
