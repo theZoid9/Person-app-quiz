@@ -1,4 +1,14 @@
-[{
-    "name":"Darth ",
-    "score":0
-}]
+[
+  {
+    "name": "Darth ",
+    "score": 0
+  },
+  {
+    "name": "Alice",
+    "score": 8
+  },
+  {
+    "name": "lol",
+    "score": 8
+  }
+]
