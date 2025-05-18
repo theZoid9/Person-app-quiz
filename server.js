@@ -11,9 +11,8 @@ app.use('/pages', express.static(path.join(__dirname, 'pages')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/services', express.static(path.join(__dirname, 'services')));
 app.use((req, res) => {
-  res.status(404).send("./src/pages/whoops.html");
+  res.status(404).sendFile(path.join(__dirname, "pages", "whoops.html"));
 })
-app.use(express.json());
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src", "index.html"));
