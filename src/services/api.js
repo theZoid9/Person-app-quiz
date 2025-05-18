@@ -18,7 +18,7 @@ const addHighscores=async(user,score)=>{
   const res = await fetch("/api/highscores", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({name: user, userScore: score})
+    body: JSON.stringify({name: user, score: score})
   });
   return await res.json();
 }
