@@ -1,11 +1,15 @@
 {
+  "name": "person-app-quiz",
+  "version": "1.0.0",
+  "description": "quiz app",
+  "main": "server.js",
   "scripts": {
-    "start": "node backend/src/config/configure_express.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "pg": "^8.16.0"
+    "express": "^5.1.0"
   }
 }

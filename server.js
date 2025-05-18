@@ -1,45 +1,48 @@
 const express = require("express");
-const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+
+app.use(express.static(path.join(__dirname, "src")));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "index.html"));
+});
+
+
+app.get("/api/users", (req, res) => {
+  const usersPath = path.join(__dirname, "data", "users.json");
+  fs.readFile(usersPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read users" });
+
+    const users = JSON.parse(data);
+    res.json(users);
+  });
+});
+
+
 app.post("/api/users", (req, res) => {
-  const { name } = req.body;
-  if (!name) return res.status(400).json({ error: "Name is required" });
+  const newUser = req.body;
 
-  const newUser = { name, createdAt: new Date().toISOString() };
+  const usersPath = path.join(__dirname, "data", "users.json");
+  fs.readFile(usersPath, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read users" });
 
-  const filePath = path.join(__dirname, "data", "users.json");
-
-  fs.readFile(filePath, "utf8", (err, data) => {
-    let users = [];
-    if (!err && data) {
-      try {
-        users = JSON.parse(data);
-      } catch (parseErr) {
-        console.error("Error parsing users.json:", parseErr);
-      }
-    }
-
+    const users = JSON.parse(data);
     users.push(newUser);
 
-    fs.writeFile(filePath, JSON.stringify(users, null, 2), (writeErr) => {
-      if (writeErr) {
-        console.error("Error writing to users.json:", writeErr);
-        return res.status(500).json({ error: "Failed to save user" });
-      }
-
-      res.status(201).json({ message: "User saved successfully" });
+    fs.writeFile(usersPath, JSON.stringify(users, null, 2), err => {
+      if (err) return res.status(500).json({ error: "Failed to write user" });
+      res.status(201).json({ message: "User added", user: newUser });
     });
   });
 });
 
+
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
