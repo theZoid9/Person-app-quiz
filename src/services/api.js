@@ -63,6 +63,7 @@ const addHighScores = async (user) => {
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
+    
 
     return data;
   } catch (error) {
