@@ -1,5 +1,5 @@
 const {
-  getHighscores
+  addHighscores
 } = require('../services/api');
 
 document.getElementById("getStartedBtn").addEventListener("click", () => {
@@ -10,5 +10,5 @@ document.getElementById("getStartedBtn").addEventListener("click", () => {
     return;
   }
 
-  getHighscores(username);
+  addHighscores(username);
 });
