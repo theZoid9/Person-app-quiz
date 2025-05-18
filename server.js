@@ -10,6 +10,8 @@ app.use(express.static(path.join(__dirname, "src")));
 app.use('/pages', express.static(path.join(__dirname, 'pages')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/services', express.static(path.join(__dirname, 'services')));
+app.use('/styles', express.static(path.join(__dirname, 'styles')));
+
 app.use((req, res) => {
   res.status(404).send("./src/pages/whoops.html");
 })
