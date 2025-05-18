@@ -10,7 +10,7 @@ startBtn.addEventListener("click", async () => {
   const name = usernameInput.value.trim();
 
   if (!name) {
-    alert("Please enter your name.");
+    alert("Please enter your name.")
     return;
   }
 
