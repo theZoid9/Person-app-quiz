@@ -49,7 +49,7 @@ const getHighscores = async () => {
 
 const addHighScores = async (user) => {
   try {
-    const res = await fetch("/api/highscores", {
+    const res = await fetch("https://person-app-quiz-production.up.railway.app/api/highscores", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
