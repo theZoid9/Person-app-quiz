@@ -37,7 +37,7 @@ const CATEGORY_ID = "1";
     resultDisplay.textContent = `Quiz Finished! You got ${score} out of ${quizData.length} correct.`;
   }
 
-  // Fetch and filter by category
+ 
   fetch('info.json')
     .then(response => response.json())
     .then(data => {
