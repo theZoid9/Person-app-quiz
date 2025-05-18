@@ -1,8 +1,9 @@
-const {addHighScores} = require('../services/api.js')
+import addHighScores from '../services/api.js'
 
 const startForm = document.getElementById("start-form");
 
 startForm.addEventListener("submit", async (event) => {
+  event.preventDefault()
   const usernameInput = document.getElementById("username");
   const username = usernameInput.value.trim();
 
