@@ -3,7 +3,6 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "src")));

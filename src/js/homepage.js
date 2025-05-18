@@ -23,6 +23,6 @@ startForm.addEventListener("submit", async (event) => {
       alert("Error: " + result.error)
     }
   }catch(error){
-    alert("Failed to connect to the server.")
+    alert("Failed to connect to the server.", error.message)
   }
 })
