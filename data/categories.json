@@ -1,1 +1,7 @@
-[]
+[
+    { "id": 1, "name": "Hardware" },
+    { "id": 2, "name": "Operating Systems" },
+    { "id": 3, "name": "Web Development" },
+    { "id": 4, "name": "Network" }
+  ]
+  
