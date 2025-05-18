@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/quiz.css"/>
-    <link rel="stylesheet" href="../styles/main.css"/>
-    <title>quiz_take</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/quiz.css"/>
+  <link rel="stylesheet" href="../styles/main.css"/>
+  <title>Quiz</title>
 </head>
 <body>
-<header>
+  <header>
     <h2>Brain Tease</h2>
-</header>
+  </header>
 
-<main>
-<section id="quiz-question">
-  <div class="quiz-header">
-    <div class="question-progress">Question <span id="current-question">3</span> of <span id="total-questions">10</span></div>
-    <div class="timer">⏱ Time left: <span id="time-remaining">00:04</span></div>
-  </div>
+  <main>
+    <section id="quiz-question">
+      <div class="quiz-header">
+        <div class="question-progress">
+          Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+        </div>
+        <div id="quiz-timer" class="quiz-timer">
+          Time Left: <span id="timer">60</span> seconds
+        </div>
+      </div>
 
-  <div class="question-body">
-    <h2 id="questionDisplay"></h2>
-    <p class="question-instruction">Pick one:</p>
-    <ul class="answer-options">
-      <li><button class="answer-btn"></button></li>
-      <li><button class="answer-btn"></button></li>
-      <li><button class="answer-btn"></button></li>
-      <li><button class="answer-btn"></button></li>
-    </ul>
-  </div>
+      <div class="question-body">
+        <h2 id="questionDisplay"></h2>
+        <p class="question-instruction">Pick one:</p>
+        <ul class="answer-options">
+          <li><button class="answer-btn" id="btn0"></button></li>
+          <li><button class="answer-btn" id="btn1"></button></li>
+          <li><button class="answer-btn" id="btn2"></button></li>
+          <li><button class="answer-btn" id="btn3"></button></li>
+        </ul>
+        <p id="result"></p>
+      </div>
+    </section>
+  </main>
 
-</section>
-
-</main>
-
-<footer>
+  <footer>
     © 2025 Brain Tease
-</footer>
-  <script src="../js/homepage.js"></script>
-  <script src="../js/category.js"></script>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
 </body>
 </html>

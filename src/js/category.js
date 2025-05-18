@@ -1,8 +1,16 @@
-  document.querySelectorAll(".category-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      window.location.href = "quiz.html";
-    });
+document.querySelectorAll(".category-button").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const selectedCategory = btn.dataset.category;
+
+    alert("⚠️ Once you continue, the quiz will start immediately and the timer will begin. Be ready!");
+
+    localStorage.setItem("selectedCategory", selectedCategory);
+    localStorage.setItem("quizStartTime", Date.now());
+    window.location.href = "../pages/quiz.html";
   });
+});
+
 
 async function getQuestionsById(id) {
   try {
