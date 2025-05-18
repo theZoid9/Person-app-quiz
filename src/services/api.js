@@ -8,6 +8,16 @@ const getAnswers=async()=>{
   return await res.json();
 }
 
+const getcategory=async()=>{
+  const res = await fetch("/api/category");
+  return await res.json();
+}
+
+const getleaderboard=async()=>{
+  const res = await fetch("/api/leaderboard");
+  return await res.json();
+}
+
 const addUser =async(user)=>{
   const res = await fetch("/api/users", {
     method: "POST",
@@ -17,4 +27,4 @@ const addUser =async(user)=>{
   return await res.json();
 }
 
-module.exports={addUser,getUsers}
+module.exports={addUser,getUsers,getAnswers,getcategory,getleaderboard}
