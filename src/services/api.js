@@ -47,30 +47,33 @@ const getHighscores = async () => {
 };
 
 
+// services/api.js
+
+/**
+
+ */
 const addHighScores = async (user) => {
   try {
-    const res = await fetch("https://person-app-quiz-production.up.railway.app/api/highscores", {
+    const res = await fetch("http://localhost:3000/api/highscores", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
     });
 
-    const data = await res.json();
-    console.log("Success:", data);
+    const result = await res.json();
 
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
+      throw new Error(result.error || "Failed to add highscore");
     }
-    
 
-    return data;
+    return result;
   } catch (error) {
-    console.error("Error posting score:", error);
+    console.error("Error posting score:", error.message);
+    throw error;
   }
 };
 
-
-export default addHighScores
+module.exports = { addHighScores };
 // module.exports={getAnswers,getCategory,addHighScores,getHighscores}
