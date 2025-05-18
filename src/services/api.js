@@ -23,4 +23,6 @@ const addHighscores=async(user,score)=>{
   return await res.json();
 }
 
+addHighscores("Aaron",10)
+
 module.exports={getAnswers,getCategory,addHighscores,getHighscores}
