@@ -14,9 +14,15 @@
 
 <main>
  <h1 id="welcome-phrase">Welcome to Brain Tease!</h1>
-
 <form id="category-form">
-  <p id="choose-category">Choose a category to start the quiz</p>
+   <div id="quiz-timer" class="quiz-timer">Time: <span id="timer">60</span> seconds</div>
+  <p>
+  Choose a category 
+  <span class="tooltip">
+    ℹ️
+    <span class="tooltiptext">You'll be redirected to the quiz and the timer will start immediately.</span>
+  </span>
+  </p>
 
   <div id="categories">
     <button type="button" data-id="1" class="category-btn" href="quiz.html">Hardware</button>
@@ -25,9 +31,6 @@
     <button type="button" data-id="4" class="category-btn" href="quiz.html">Network</button>
   </div>
 
-  <!-- <div id="get-started">
-    <button type="button" id="start-quiz-btn">Start Quiz</button>
-  </div> -->
 </form>
 
 </main>
