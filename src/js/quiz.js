@@ -261,7 +261,7 @@ const handleAnswer = (selected) => {
 const endQuiz = () => {
   alert(`Quiz over! 🎉 Your score: ${score}`);
 
-  window.location.href = "../pages/highscores.html";
+  window.location.href = "../pages/result.html";
 };
 
 
