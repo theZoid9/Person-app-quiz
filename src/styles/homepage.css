@@ -1,7 +1,7 @@
 
 body {
     transition: opacity 1.5s ease-in;
-    color: white;
+    color: rgb(180, 114, 114);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -12,7 +12,7 @@ body {
   max-width: 500px;
   margin: 3rem auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: #372a28;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
   text-align: center;
@@ -22,7 +22,7 @@ body {
 
 #welcome-phrase {
   font-size: 2rem;
-  color: #1f2937;
+  color: #818385;
   margin-bottom: 2rem;
 }
 
