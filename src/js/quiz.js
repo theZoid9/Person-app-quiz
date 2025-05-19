@@ -130,8 +130,6 @@ const dummyData = [
 ];
 
 
-
-
 const loadQuestion = () => {
   const q = quizData[currentIndex];
   questionDisplay.textContent = q.question;
